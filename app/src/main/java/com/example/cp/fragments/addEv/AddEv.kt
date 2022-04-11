@@ -134,9 +134,10 @@ class AddEv : Fragment() {
 
     //choose date
     private fun updateLable(myCalendar: Calendar) {
-        val myformat = "dd-MM-yyyy"
-        val sdf = SimpleDateFormat(myformat, Locale.ENGLISH)
-        view?.txtDate?.text = sdf.format(myCalendar.time)
+//        val myformat = "dd-MM-yyyy"
+//        val sdf = SimpleDateFormat(myformat, Locale.ENGLISH)
+//        view?.txtDate?.text = sdf.format(myCalendar.time)
+        view?.txtDate?.text = myCalendar.timeInMillis.toString()
 
 
     }
