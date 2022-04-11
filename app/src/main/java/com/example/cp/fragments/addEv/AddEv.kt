@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.example.cp.R
 import com.example.cp.data.Event
@@ -29,7 +30,7 @@ class AddEv : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_add_ev, container, false)
 
-
+        mEventViewModel = ViewModelProvider(this)[EventViewModel::class.java]
 
 
 
@@ -110,7 +111,7 @@ class AddEv : Fragment() {
     }
 
     private fun IsertToDataBase() {
-        val date :Long=txtDate.text.toString().toBigDecimal().longValueExact()
+        val date :Long=txtDate.text.toString().toLong().times(Long.MAX_VALUE)
         val title=txtText.text.toString()
         val text=descreption.text.toString()
 
@@ -121,6 +122,7 @@ class AddEv : Fragment() {
         else{
            val event= Event(0,title,text,date)
             mEventViewModel.addEvent(event)
+
             Toast.makeText(requireContext(), "Added", Toast.LENGTH_SHORT).show()
 
         }
@@ -135,6 +137,8 @@ class AddEv : Fragment() {
         val myformat = "dd-MM-yyyy"
         val sdf = SimpleDateFormat(myformat, Locale.ENGLISH)
         view?.txtDate?.text = sdf.format(myCalendar.time)
+
+
     }
 
 
