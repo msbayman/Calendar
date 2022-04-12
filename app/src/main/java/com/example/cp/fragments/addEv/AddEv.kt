@@ -16,7 +16,11 @@ import com.example.cp.data.EventViewModel
 import kotlinx.android.synthetic.main.fragment_add_ev.*
 import kotlinx.android.synthetic.main.fragment_add_ev.view.*
 import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 import java.util.*
+import kotlin.time.ExperimentalTime
+import kotlin.time.milliseconds
 
 
 class AddEv : Fragment() {
@@ -110,8 +114,21 @@ class AddEv : Fragment() {
         return view
     }
 
+    @OptIn(ExperimentalTime::class)
     private fun IsertToDataBase() {
-        val date :Long=txtDate.text.toString().toLong().times(Long.MAX_VALUE)
+
+        //changedate to mili in insert
+        val date =txtDate.text.toString()
+//        val k=date.toLong()
+//        val r=k.milliseconds.toString().toLong()
+//        val r=converttime(date).toString().toLong()
+        val e = SimpleDateFormat("dd-MM-yyyy").parse(date)
+        val r=e.time.milliseconds.toLongMilliseconds()
+
+
+
+
+
         val title=txtText.text.toString()
         val text=descreption.text.toString()
 
@@ -120,27 +137,39 @@ class AddEv : Fragment() {
 
         }
         else{
-           val event= Event(0,title,text,date)
+           val event= Event(0,title,text,r)
             mEventViewModel.addEvent(event)
 
             Toast.makeText(requireContext(), "Added", Toast.LENGTH_SHORT).show()
 
         }
     }
-    private fun inputCheck2 (title: String, date:Long):Boolean{
+    private fun inputCheck2 (title: String, date:String):Boolean{
         return title.isEmpty()|| (return date==null)
 
     }
 
     //choose date
     private fun updateLable(myCalendar: Calendar) {
-//        val myformat = "dd-MM-yyyy"
-//        val sdf = SimpleDateFormat(myformat, Locale.ENGLISH)
-//        view?.txtDate?.text = sdf.format(myCalendar.time)
-        view?.txtDate?.text = myCalendar.timeInMillis.toString()
+        val myformat = "dd-MM-yyyy"
+        val sdf = SimpleDateFormat(myformat, Locale.ENGLISH)
+        view?.txtDate?.text = sdf.format(myCalendar.time)
+//        view?.txtDate?.text = myCalendar.timeInMillis.toString()
 
 
     }
+
+     private  fun converttime (s:String): LocalDate? {
+            // Format y-M-d or yyyy-MM-d
+            val string = s
+            val date = LocalDate.parse(string, DateTimeFormatter.BASIC_ISO_DATE)
+
+            return (date)
+        }
+
+
+
+
 
 
 

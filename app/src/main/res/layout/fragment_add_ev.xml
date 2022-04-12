@@ -94,7 +94,8 @@
             android:layout_height="wrap_content"
             android:inputType="date"
             android:layout_gravity="center"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            tools:ignore="TextViewEdits" />
     </LinearLayout>
 
 
@@ -128,7 +129,7 @@
             android:gravity="start"
             android:isScrollContainer="true"
             android:hint=" text"
-            android:inputType="date"
+            android:inputType="textLongMessage"
 
             style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
 
