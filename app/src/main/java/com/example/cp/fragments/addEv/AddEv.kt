@@ -13,10 +13,13 @@ import androidx.navigation.findNavController
 import com.example.cp.R
 import com.example.cp.data.Event
 import com.example.cp.data.EventViewModel
+import com.example.cp.time
 import kotlinx.android.synthetic.main.fragment_add_ev.*
 import kotlinx.android.synthetic.main.fragment_add_ev.view.*
+import java.io.IOError
 import java.text.SimpleDateFormat
 import java.time.LocalDate
+import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.util.*
 import kotlin.time.ExperimentalTime
@@ -78,7 +81,6 @@ class AddEv : Fragment() {
 
 
 
-
 //            txtDate.text=null
 //            txtText.text=null
 //            descreption.text=null
@@ -111,19 +113,22 @@ class AddEv : Fragment() {
 
 
 
+
+
+
         return view
     }
 
     @OptIn(ExperimentalTime::class)
     private fun IsertToDataBase() {
-
-        //changedate to mili in insert
         val date =txtDate.text.toString()
+        //changedate to mili in insert
+//        val date =txtDate.text.toString()
 //        val k=date.toLong()
 //        val r=k.milliseconds.toString().toLong()
 //        val r=converttime(date).toString().toLong()
-        val e = SimpleDateFormat("dd-MM-yyyy").parse(date)
-        val r=e.time.milliseconds.toLongMilliseconds()
+//        val e = SimpleDateFormat("dd-MM-yyyy").parse(date)
+//        val r=e.time.milliseconds.toLongMilliseconds()
 
 
 
@@ -133,14 +138,32 @@ class AddEv : Fragment() {
         val text=descreption.text.toString()
 
         if (inputCheck2(title,date)){
+
             Toast.makeText(requireContext(), "empty", Toast.LENGTH_SHORT).show()
+
 
         }
         else{
+            //changedate to mili in insert
+            val date =txtDate.text.toString()
+//        val k=date.toLong()
+//        val r=k.milliseconds.toString().toLong()
+//        val r=converttime(date).toString().toLong()
+            val e = SimpleDateFormat("dd-MM-yyyy").parse(date)
+            val r=e.time.milliseconds.toLongMilliseconds()
+
+
+
+
+
            val event= Event(0,title,text,r)
             mEventViewModel.addEvent(event)
 
+
+
             Toast.makeText(requireContext(), "Added", Toast.LENGTH_SHORT).show()
+            view?.findNavController()?.navigate(R.id.action_addEv_to_home2)
+
 
         }
     }

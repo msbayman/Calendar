@@ -10,13 +10,15 @@ import kotlinx.coroutines.launch
 
 class EventViewModel(application: Application):AndroidViewModel(application) {
 
-    private val getAll:LiveData<List<Event>>
+    val getAll:LiveData<List<Event>>
+    val getToday:LiveData<List<Event>>
     private val repository:EventRepository
 
     init {
         val eventDao=EventDataBase.getDataBase(application).eventDao()
         repository=EventRepository(eventDao)
         getAll=repository.getAll
+        getToday=repository.getToday
     }
     fun addEvent (event: Event){
         viewModelScope.launch(Dispatchers.IO) {
