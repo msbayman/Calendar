@@ -7,8 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cp.R
 import com.example.cp.data.Event
-import com.google.android.material.navigation.NavigationBarItemView
-import kotlinx.android.synthetic.main.allevents.view.*
+import kotlinx.android.synthetic.main.allevents2.view.*
 import java.text.SimpleDateFormat
 
 class allAdapter : RecyclerView.Adapter<allAdapter.MyViewHolder>() {
@@ -22,7 +21,7 @@ class allAdapter : RecyclerView.Adapter<allAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         return MyViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.allevents, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.`allevents2.xml`, parent, false)
         )
     }
 

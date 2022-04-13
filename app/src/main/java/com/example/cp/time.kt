@@ -1,6 +1,6 @@
 package com.example.cp
 
-import kotlinx.android.synthetic.main.allevents.view.*
+import kotlinx.android.synthetic.main.allevents2.view.*
 import java.text.SimpleDateFormat
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter

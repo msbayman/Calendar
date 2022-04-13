@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cp.R
 import com.example.cp.data.Event
-import kotlinx.android.synthetic.main.allevents.view.*
+import kotlinx.android.synthetic.main.allevents2.view.*
 import kotlinx.android.synthetic.main.todayevent.view.*
 
 class todayAdapter: RecyclerView.Adapter<todayAdapter.MyViewHolder>()  {
