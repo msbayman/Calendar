@@ -50,11 +50,11 @@ android:foregroundGravity="center_horizontal"
 
 
     <TextView
-        android:gravity="center_horizontal"
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Today Events"
+        android:gravity="center_horizontal"
+        android:text="*Today Events*"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -64,11 +64,11 @@ android:foregroundGravity="center_horizontal"
         app:layout_constraintVertical_bias="0.04000002" />
 
     <TextView
-        android:gravity="center_horizontal"
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="All Events"
+        android:gravity="center_horizontal"
+        android:text="*All Events*"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"

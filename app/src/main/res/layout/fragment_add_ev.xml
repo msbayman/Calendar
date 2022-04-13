@@ -108,7 +108,7 @@
 
         android:lines="1"
      style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
-        android:maxLength="10"
+        android:maxLength="15"
         android:maxLines="1"
         android:textColor="@color/black"
         android:textColorHint="@color/black"

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ListAdapter
+import androidx.core.view.isEmpty
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
@@ -15,6 +16,7 @@ import com.example.cp.R
 import com.example.cp.data.Event
 import com.example.cp.data.EventViewModel
 import kotlinx.android.synthetic.main.fragment_add_ev.view.*
+import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_home.view.*
 import java.lang.reflect.Array.get
 import java.lang.reflect.Array.set
@@ -60,6 +62,13 @@ class Home : Fragment() {
         view.btnAdd.setOnClickListener {
             view.findNavController().navigate(R.id.action_home2_to_addEv)
         }
+
+
+
+
+
+
+
 
 
 

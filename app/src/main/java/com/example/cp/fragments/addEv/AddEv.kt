@@ -145,7 +145,7 @@ class AddEv : Fragment() {
         }
         else{
             //changedate to mili in insert
-            val date =txtDate.text.toString()
+//            val date =txtDate.text.toString()
 //        val k=date.toLong()
 //        val r=k.milliseconds.toString().toLong()
 //        val r=converttime(date).toString().toLong()
@@ -168,7 +168,7 @@ class AddEv : Fragment() {
         }
     }
     private fun inputCheck2 (title: String, date:String):Boolean{
-        return title.isEmpty()|| (return date==null)
+        return title.isEmpty()|| (date=="")
 
     }
 
@@ -181,14 +181,14 @@ class AddEv : Fragment() {
 
 
     }
-
-     private  fun converttime (s:String): LocalDate? {
-            // Format y-M-d or yyyy-MM-d
-            val string = s
-            val date = LocalDate.parse(string, DateTimeFormatter.BASIC_ISO_DATE)
-
-            return (date)
-        }
+//
+//     private  fun converttime (s:String): LocalDate? {
+//            // Format y-M-d or yyyy-MM-d
+//            val string = s
+//            val date = LocalDate.parse(string, DateTimeFormatter.BASIC_ISO_DATE)
+//
+//            return (date)
+//        }
 
 
 

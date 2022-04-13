@@ -21,7 +21,7 @@ class allAdapter : RecyclerView.Adapter<allAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         return MyViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.`allevents2.xml`, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.allevents, parent, false)
         )
     }
 
