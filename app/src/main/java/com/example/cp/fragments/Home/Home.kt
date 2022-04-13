@@ -35,22 +35,27 @@ class Home : Fragment() {
         recyclerViewAll.adapter=adapterAll
         recyclerViewAll.layoutManager=LinearLayoutManager(requireContext())
 
+//        //evetviewmodel
+//        mEventViewModel= ViewModelProvider(this)[EventViewModel::class.java]
+//        mEventViewModel.getAll.observe(viewLifecycleOwner, Observer {event->
+//           adapterAll.setData(event) })
 
 
 
 
 
-
-
-
-
+        val adapterToday=todayAdapter()
+        val recyclerViewToday=view.RCtoday
+        recyclerViewToday.adapter=adapterToday
+        recyclerViewToday.layoutManager=LinearLayoutManager(requireContext())
 
 
         //evetviewmodel
         mEventViewModel= ViewModelProvider(this)[EventViewModel::class.java]
         mEventViewModel.getAll.observe(viewLifecycleOwner, Observer {event->
-           adapterAll.setData(event) })
-
+            adapterAll.setData(event) })
+        mEventViewModel.getToday.observe(viewLifecycleOwner, Observer {event->
+            adapterToday.ssetData(event) })
 
         view.btnAdd.setOnClickListener {
             view.findNavController().navigate(R.id.action_home2_to_addEv)

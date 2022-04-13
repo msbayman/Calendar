@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.todayevent.view.*
 
 class todayAdapter: RecyclerView.Adapter<todayAdapter.MyViewHolder>()  {
 
-    private var evenrList = emptyList<Event>()
+    private var eevenrList = emptyList<Event>()
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     }
@@ -23,18 +23,18 @@ class todayAdapter: RecyclerView.Adapter<todayAdapter.MyViewHolder>()  {
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val currentItem = evenrList[position]
+        val currentItem = eevenrList[position]
 
         holder.itemView.txtTitle.text=currentItem.title
 
     }
 
     override fun getItemCount(): Int {
-        return evenrList.size
+        return eevenrList.size
     }
     @SuppressLint("NotifyDataSetChanged")
-    fun setData(event: List<Event>) {
-        this.evenrList = event
+    fun ssetData(event: List<Event>) {
+        this.eevenrList = event
         notifyDataSetChanged()
 
     }

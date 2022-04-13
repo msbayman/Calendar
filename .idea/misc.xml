@@ -8,7 +8,7 @@
         <entry key="app/src/main/res/layout/activity_main0.xml" value="0.1" />
         <entry key="app/src/main/res/layout/allevents.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_add_ev.xml" value="0.19375" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_list_all.xml" value="0.22" />
         <entry key="app/src/main/res/layout/todayevent.xml" value="0.25" />
         <entry key="app/src/main/res/menu/btm_bar.xml" value="0.1" />
@@ -20,5 +20,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.22" />
+      </ProjectState>
+    </option>
   </component>
 </project>

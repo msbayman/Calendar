@@ -20,7 +20,7 @@ abstract interface EventDao {
     val b : String?
         get() = time().CDate()
 
-    @Query("select * from Event_table where date= :a")
+    @Query("select * from Event_table where date=:a ")
     fun getToday(a: String? =b):LiveData<List<Event>>
 
 
