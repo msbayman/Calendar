@@ -11,7 +11,7 @@ import java.util.*
 @Dao
 abstract interface EventDao {
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun addEvent(event: Event)
     @Delete
     suspend fun deleteEvent(event: Event)

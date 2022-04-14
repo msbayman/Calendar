@@ -8,8 +8,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="18dp"
-    android:id="@+id/FragAdd"
-    tools:context=".fragments.addEv.AddEv">
+    android:id="@+id/fragUp"
+    tools:context=".fragments.Update.UppDateEv">
 
 
     <LinearLayout
@@ -17,20 +17,22 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:orientation="horizontal">
+
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
+            android:layout_height="wrap_content">
+
             <ImageButton
-                android:layout_alignParentStart="true"
-                android:id="@+id/back"
+                android:id="@+id/backUP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
                 android:backgroundTint="#FFFFFF"
                 android:src="@drawable/ic_baseline_arrow_back_24"
                 app:tint="#000000" />
+
             <ImageButton
-                android:id="@+id/delete"
+                android:id="@+id/deleteUp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
@@ -40,7 +42,7 @@
                 app:tint="#000000" />
 
             <ImageButton
-                android:id="@+id/save"
+                android:id="@+id/saveUp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
@@ -59,36 +61,38 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnTime"
-            android:layout_weight="1"
+            android:id="@+id/btnTimeUP"
             style="?attr/materialButtonOutlinedStyle"
             android:layout_width="wrap_content"
-            android:textColor="@color/black"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
             android:layout_marginLeft="23sp"
             android:layout_marginRight="23sp"
-            android:text="@string/date" />
+            android:layout_weight="1"
+            android:text="@string/date"
+            android:visibility="gone"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/txtDate"
-            android:layout_weight="2"
+            android:id="@+id/txtDateUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="date"
             android:layout_gravity="center"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:inputType="date"
             android:textSize="25sp"
             tools:ignore="TextViewEdits" />
     </LinearLayout>
 
 
     <EditText
-        android:id="@+id/txtText"
+        android:id="@+id/txtTextUP"
+        style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint=" title"
         android:lines="1"
-     style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
         android:maxLength="15"
         android:maxLines="1"
         android:textColor="@color/black"
@@ -105,22 +109,19 @@
 
 
         <EditText
-            android:id="@+id/descreption"
+            android:id="@+id/descreptionUP"
+            style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="start"
-            android:isScrollContainer="true"
             android:hint=" text"
             android:inputType="textMultiLine"
+            android:isScrollContainer="true"
             android:lines="35"
-            style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
-            android:textSize="25sp"
-            />
+            android:textSize="25sp" />
     </ScrollView>
-
-
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>

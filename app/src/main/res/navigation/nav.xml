@@ -13,6 +13,10 @@
         <action
             android:id="@+id/action_home2_to_addEv"
             app:destination="@id/addEv" />
+        <action
+            android:id="@+id/action_home2_to_uppDateEv3"
+            app:destination="@id/uppDateEv" />
+
     </fragment>
     <fragment
         android:id="@+id/addEv"
@@ -21,6 +25,18 @@
         tools:layout="@layout/fragment_add_ev" >
         <action
             android:id="@+id/action_addEv_to_home2"
+            app:destination="@id/home2" />
+    </fragment>
+    <fragment
+        android:id="@+id/uppDateEv"
+        android:name="com.example.cp.fragments.Update.UppDateEv"
+        android:label="fragment_uppdate_ev"
+        tools:layout="@layout/fragment_uppdate_ev" >
+        <argument
+            android:name="currentevent"
+            app:argType="com.example.cp.data.Event" />
+        <action
+            android:id="@+id/action_uppDateEv_to_home2"
             app:destination="@id/home2" />
     </fragment>
 </navigation>

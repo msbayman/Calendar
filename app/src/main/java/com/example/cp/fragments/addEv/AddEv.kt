@@ -13,14 +13,9 @@ import androidx.navigation.findNavController
 import com.example.cp.R
 import com.example.cp.data.Event
 import com.example.cp.data.EventViewModel
-import com.example.cp.time
 import kotlinx.android.synthetic.main.fragment_add_ev.*
 import kotlinx.android.synthetic.main.fragment_add_ev.view.*
-import java.io.IOError
 import java.text.SimpleDateFormat
-import java.time.LocalDate
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 import java.util.*
 import kotlin.time.ExperimentalTime
 import kotlin.time.milliseconds
@@ -190,7 +185,12 @@ class AddEv : Fragment() {
 //            return (date)
 //        }
 
-
+//           private fun Clear(){
+//               view?.descreption?.text=null
+//               view?.txtDate?.text=null
+//
+//
+//            }
 
 
 

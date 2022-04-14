@@ -5,6 +5,7 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="6dp"
     android:layout_marginLeft="18dp"
+    android:id="@+id/todayeventsLayout"
     android:layout_marginRight="18dp"
     android:orientation="horizontal">
 
