@@ -53,7 +53,9 @@ class UppDateEv : Fragment() {
 
 
 
-
+        view.deleteUp.setOnClickListener {
+            delete()
+        }
 
         view.backUP.setOnClickListener {
 
@@ -74,7 +76,18 @@ class UppDateEv : Fragment() {
 
 
 
-        Toast.makeText(requireContext(), "Added", Toast.LENGTH_SHORT).show()
+        Toast.makeText(requireContext(), "Updated", Toast.LENGTH_SHORT).show()
+        view?.findNavController()?.navigate(R.id.action_uppDateEv_to_home2)
+    }
+
+
+    fun delete(){
+        val event= Event(args.currentevent.id,view?.txtTextUP?.text.toString(),view?.descreptionUP?.text.toString(),args.currentevent.date.toLong())
+        mEventViewModel.deleteEvent(event)
+
+
+
+        Toast.makeText(requireContext(), "Deleted", Toast.LENGTH_SHORT).show()
         view?.findNavController()?.navigate(R.id.action_uppDateEv_to_home2)
     }
 
